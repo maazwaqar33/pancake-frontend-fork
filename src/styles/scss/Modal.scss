@@ -1,0 +1,9 @@
+@import "variables.css";
+
+.modal {
+  position: absolute;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $black;
+  top: 0;
+}

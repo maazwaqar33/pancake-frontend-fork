@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0")
+      format("embedded-opentype"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0")
+      format("woff2"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0")
+      format("woff"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0")
+      format("truetype"),
+    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular")
+      format("svg");
+}
+
+.checkbox-group h4 {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: sub;
+  margin-bottom: 0;
+}
+
+.checkbox-group .radio-group {
+  margin: 0;
+}
+
+.checkbox-group > label:not(.checkbox-radio) {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 52px;
+  margin-bottom: 15px;
+  min-height: 40px;
+  font-size: 16px;
+  background-color: #efefef;
+  padding: 13px;
+  border-radius: 21px;
+}
+.checkbox-group > label:not(.checkbox-radio):hover {
+  background-color: #e5e5e5;
+}
+@media (min-width: 768px) {
+  .checkbox-group > label:not(.checkbox-radio) {
+    width: 366px;
+  }
+}
+.checkbox-group > label:not(.checkbox-radio) span {
+  margin-left: 40px;
+  font-weight: 500;
+}
+.checkbox-group > label:not(.checkbox-radio) span::before {
+  content: "";
+  border: 1px solid #677a8e;
+  background: #677a8e;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.checkbox-group > label:not(.checkbox-radio) :checked + span::before {
+  background-color: #677a8e;
+  border-color: #677a8e;
+}
+.checkbox-group > label:not(.checkbox-radio) :checked + span::after {
+  font-family: "FontAwesome";
+  font-size: 21px;
+  content: "\f00c";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: #fff;
+}
+
+.checkbox-square .radio-group {
+  margin: 0;
+}
+
+.checkbox-square input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox-square > label:not(.checkbox-radio) {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 52px;
+  margin-bottom: 15px;
+  min-height: 40px;
+  font-size: 16px;
+  padding: 13px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.checkbox-square > label:not(.checkbox-radio) span {
+  margin-left: 40px;
+  font-weight: 500;
+}
+.checkbox-square > label:not(.checkbox-radio) :not(:checked) + span::after {
+  font-family: "FontAwesome";
+  font-size: 21px;
+  content: "\f067";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: #000;
+}
+.checkbox-square > label:not(.checkbox-radio) span::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.checkbox-square > label:not(.checkbox-radio) :checked + span::before {
+  font-family: "FontAwesome";
+  font-size: 21px;
+  content: "\f068";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: #000;
+}
+.checkbox-square > label:not(.checkbox-radio) :checked + span::after {
+  font-family: "FontAwesome";
+  font-size: 21px;
+  content: "\f068";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: #000;
+}
+
+.checkbox-group input[type="checkbox"],
+.checkbox-square input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox-list li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.checkbox-list label {
+  display: none !important;
+}
+
+.checkbox-list h4,
+.checkbox-list button {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.checkbox-list h4 {
+  margin-right: 20px;
+}
+
+.nested-list {
+  list-style: none;
+  padding-left: 0;
+}
+.nested-list li {
+  list-style: none;
+}
+.nested-list select {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 1px solid #677a8e;
+  line-height: 42px;
+  height: 42px;
+  width: 100%;
+}

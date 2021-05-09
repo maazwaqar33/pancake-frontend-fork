@@ -1,0 +1,656 @@
+@import "./variables";
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    margin: 0 15px;
+  }
+}
+
+.layout {
+  text-align: center;
+}
+
+section {
+  margin-bottom: 42px;
+}
+// headings
+h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 56px;
+  > span {
+    font-weight: 400;
+  }
+}
+
+h3 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.heading-primary {
+  color: $deep-grey1;
+}
+
+.heading-secondary {
+  color: $green;
+  margin-bottom: 10px;
+  ~ p {
+    margin-top: 0;
+  }
+}
+
+.heading-paragraph {
+  font-size: 21px;
+}
+
+* {
+  line-height: 1.4em;
+}
+// rules
+
+hr {
+  margin: 60px 0;
+}
+
+// forms
+
+// buttons
+
+.btn,
+button {
+  display: inline-block;
+  border: 1px solid $grey;
+  color: $deep-grey1;
+  margin: 10px 10px 10px 0;
+  min-width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 12px 20px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+
+  @media (min-width: 426px) {
+    min-width: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: $grey;
+    color: $white;
+  }
+}
+
+.btn-primary {
+  background: $green;
+  border-color: $green;
+  color: $white;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+  &:hover {
+    background: #68bd78;
+  }
+}
+
+input {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 8px 20px;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  &[type="text"],
+  &[type="number"],
+  &[type="search"] {
+    border: 1px solid $grey;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 42px;
+    height: 42px;
+    width: 100%;
+  }
+}
+
+fieldset {
+  margin: 0;
+  border: none;
+  padding: 0;
+
+  > p {
+    font-size: 17px;
+    margin-top: 5px;
+    font-weight: 400;
+  }
+}
+
+h4,
+legend {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+// arrow-boxes
+
+.arrow-box {
+  padding: 30px 50px;
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+  min-height: 100px;
+  &.primary {
+    background-color: $light-green;
+    font-size: 24px;
+    font-weight: bold;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -30px;
+      width: 0;
+      height: 0;
+      border-top: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-right: 40px solid $light-green;
+    }
+  }
+  &.secondary {
+    background-color: $light-grey;
+    margin-bottom: 50px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      width: 0;
+      height: 0;
+      border-top: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-left: 40px solid $light-grey;
+    }
+
+    p,
+    span {
+      font-size: 24px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  > label {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  input {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p.help-text {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+}
+
+.aria-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// main
+body {
+  color: $deep-grey1;
+  margin: 0;
+  font-family: "Fira Sans", sans-serif;
+}
+
+main {
+  overflow: auto;
+}
+
+// templates
+.footer {
+  position: relative;
+  margin-top: 200px;
+  height: 200px;
+  clear: both;
+  background-color: #000;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  p {
+    margin-top: 15px;
+    color: $white;
+    font-size: 30px;
+  }
+  .link {
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.main-header {
+  text-align: left;
+  background-color: $header-primary-color;
+  color: $green;
+  overflow: auto;
+  position: relative;
+  margin-bottom: 20px;
+  img {
+    height: 55px;
+    position: absolute;
+    top: 32%;
+  }
+  a {
+    color: $green;
+  }
+  p {
+    margin-top: 40px;
+
+    &.heading {
+      font-size: 32px;
+      font-weight: 800;
+      display: inline-block;
+      margin-left: 110px;
+      color: $green;
+    }
+  }
+}
+
+p,
+ul {
+  font-size: 18px;
+}
+
+.accordian {
+  margin: 30px 0 20px;
+}
+
+.accordian-header {
+  border-top: 1px solid $accordian-border-color;
+  border-bottom: 1px solid $accordian-border-color;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4em;
+  text-align: left;
+  background-color: $accordian-bg;
+  padding: 10px 55px 10px 20px;
+  position: relative;
+  span {
+    font-weight: normal;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &::after {
+    font-family: FontAwesome;
+    font-size: 21px;
+    content: "\F067";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    color: $deep-grey;
+  }
+}
+
+.accordian-body {
+  text-align: left;
+  background-color: $accordian-bg;
+  margin-top: 0;
+  padding: 8px 20px 20px;
+  > p:first-child {
+    margin-top: 10px;
+  }
+  p {
+    font-size: 17px;
+  }
+}
+
+canvas {
+  border: 1px solid #000;
+}
+
+.Select-input {
+  height: 44px;
+  > input {
+    width: 100% !important;
+    padding: 0;
+  }
+}
+
+.Select-value {
+  padding-top: 5px;
+}
+
+.Select-control {
+  margin: 10px 0 0;
+  border-color: $grey;
+}
+
+.Select-placeholder {
+  display: none !important;
+}
+
+.select-results {
+  font-size: 24px;
+}
+
+.autocomplete-form {
+  text-align: center;
+}
+
+.Select {
+  display: inline-block;
+  width: 100%;
+}
+
+.radio {
+  display: inline-block;
+  border: 1px solid $grey;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 18px;
+  font-size: 18px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+.radio-list {
+  display: block;
+  margin-bottom: 30px;
+  span {
+    @extend .radio;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    position: absolute;
+    left: -9999px;
+    margin: 0;
+    &:checked + span {
+      @extend .radio;
+      background-color: $grey;
+      color: $white;
+    }
+  }
+
+  + label {
+    display: inline-block;
+    margin-top: 40px;
+  }
+
+  div div:first-child {
+    margin-top: 20px;
+  }
+}
+
+.radio-list-compact {
+  width: 70%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.theme-sand {
+  overflow: auto;
+  background: $sand;
+}
+
+.field {
+  display: flex;
+  flex-flow: column;
+  margin: 40px 0;
+  input:nth-child(2) {
+    margin-bottom: 0;
+  }
+}
+
+.row {
+  display: flex;
+  @media (min-width: 320px) and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.column {
+  flex: 50%;
+  &:first-child {
+    padding-right: 10px;
+  }
+  &:last-child {
+    padding-left: 10px;
+  }
+  @media (min-width: 320px) and (max-width: 767px) {
+    &:first-child {
+      padding-right: 0;
+    }
+    &:last-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.list-stripped {
+  padding-left: 0;
+  list-style: none;
+}
+
+.radio-list-multi {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  background: #eeeeee;
+  border-radius: 30px;
+  padding: 12px 20px 12px 65px;
+}
+
+/* Hide the browser's default checkbox */
+.radio-list-multi input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-list-multi .checkmark {
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  height: 30px;
+  width: 30px;
+  // background-color: #eee;
+  display: block;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-list-container input ~ .radio-list-multi .checkmark {
+  background-color: $white !important;
+  border-radius: 8px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.radio-list-multi .checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+/* Show the checkmark when checked */
+.radio-list-multi input:checked ~ .radio-list-multi .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+input:checked ~ .radio-list-multi .checkmark:after {
+  left: 8px;
+  top: 0;
+  width: 10px;
+  height: 20px;
+  border: solid $deep-grey1;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+input:checked + .radio-list-multi {
+  background: $selected;
+}
+
+.radio-list-container > input {
+  display: none;
+}
+
+.theme-main {
+  h2 {
+    border-left: 4px solid $green;
+    padding-left: 25px;
+    position: relative;
+    left: -30px;
+  }
+}
+
+.arrow {
+  border: solid $grey2;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 6px;
+  position: relative;
+  top: 1px;
+  margin-right: 10px;
+  &.left {
+    transform: rotate(135deg);
+  }
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.checkbox-label {
+  position: relative;
+
+  span {
+    display: inline-block;
+    padding-left: 5px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.checkbox-label,
+.instructions {
+  margin-top: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+
+  .checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  label {
+    flex-grow: 0;
+  }
+
+  input {
+    position: absolute;
+    left: -9999px;
+
+    + span {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding-left: 52px;
+      margin-bottom: 15px;
+      min-height: 35px;
+      font-size: 16px;
+      padding-top: 3px;
+      margin-top: 10px;
+
+      &::before {
+        content: "";
+        border: 1px solid $grey;
+        background: transparent;
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &[type="checkbox"]:checked + span::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      width: 10px;
+      height: 20px;
+      border: solid $deep-grey1;
+      border-width: 0 4px 4px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.jumpTo {
+  padding-top: 30px;
+}

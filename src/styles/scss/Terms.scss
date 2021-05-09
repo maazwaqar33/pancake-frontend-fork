@@ -1,0 +1,46 @@
+.terms {
+  list-style: none;
+  counter-reset: section;
+  ol {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      padding-left: 3rem;
+      margin: 0.5rem 0;
+      line-height: 1.25;
+      position: relative;
+      counter-increment: clause;
+      &::before {
+        content: counter(clause, lower-alpha) ". ";
+        position: absolute;
+        width: 2rem;
+        text-align: right;
+        left: 0;
+      }
+    }
+
+    ol {
+      counter-reset: clause;
+    }
+  }
+}
+
+.terms > li {
+  counter-increment: section;
+
+  &::before {
+    content: counter(section) " ";
+  }
+}
+
+.terms > li > ol {
+  counter-reset: subsection;
+}
+.terms > li > ol > li {
+  counter-increment: clause;
+
+  &::before {
+    content: counter(clause, lower-alpha) ". ";
+  }
+}
